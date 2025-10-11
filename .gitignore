@@ -1,0 +1,4 @@
+.github
+.venv
+*.pyc
+uv.lock
