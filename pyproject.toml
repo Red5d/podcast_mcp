@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupiterbroadcasting-mcp"
+name = "podcast_mcp"
 version = "0.1.0"
-description = "A FastMCP server for parsing Jupiter Broadcasting Podcast 2.0 RSS feeds"
+description = "A FastMCP server for parsing Podcasting 2.0 RSS feeds"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
@@ -37,12 +37,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Red5d/jupiterbroadcasting-mcp"
-Repository = "https://github.com/Red5d/jupiterbroadcasting-mcp"
+Homepage = "https://github.com/Red5d/podcast_mcp"
+Repository = "https://github.com/Red5d/podcast_mcp"
 
 [project.scripts]
-jupiterbroadcasting-mcp = "jupiterbroadcasting_mcp.server:main"
-
+podcast_mcp = "podcast_mcp.server:main"
 [tool.black]
 line-length = 88
 target-version = ["py310"]

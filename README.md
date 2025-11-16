@@ -1,6 +1,6 @@
-# Jupiter Broadcasting Podcast Data MCP Server
+# Podcasting 2.0 RSS Data MCP Server
 
-A FastMCP server that parses Podcast 2.0 RSS feeds from Jupiter Broadcasting shows and provides access to episode data through MCP tools.
+A FastMCP server that parses Podcasting 2.0 RSS feeds and provides access to episode data through MCP tools.
 
 ## Features
 
@@ -30,7 +30,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```bash
 git clone <repository-url>
-cd jupiterbroadcasting_mcp
+cd podcast_mcp
 uv sync
 ```
 
@@ -41,13 +41,13 @@ uv sync
 To start the MCP server:
 
 ```bash
-uv run jupiterbroadcasting-mcp
+uv run podcast-mcp
 ```
 
 Or alternatively:
 
 ```bash
-uv run python -m jupiterbroadcasting_mcp.server
+uv run python -m podcast_mcp.server
 ```
 
 ### MCP Tools
@@ -142,7 +142,7 @@ Fetch the transcript content for an episode.
 
 ### Adding New Feeds
 
-To add or modify RSS feeds, edit the `JB_FEEDS` dictionary in `jupiterbroadcasting_mcp/server.py`:
+To add or modify RSS feeds, edit the `FEEDS` dictionary in `podcast_mcp/server.py`:
 
 ```python
 JB_FEEDS = {
@@ -180,8 +180,8 @@ uv run mypy .
 ### Project Structure
 
 ```
-jupiterbroadcasting_mcp/
-├── jupiterbroadcasting_mcp/
+podcast_mcp/
+├── podcast_mcp/
 │   ├── __init__.py
 │   ├── server.py          # Main MCP server
 │   └── rss_parser.py      # RSS feed parsing logic

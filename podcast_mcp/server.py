@@ -1,4 +1,4 @@
-"""FastMCP server for Jupiter Broadcasting podcast feeds."""
+"""FastMCP server for Podcasting 2.0 rss feeds."""
 import asyncio
 from typing import Any, Dict, List, Optional
 
@@ -6,8 +6,8 @@ from fastmcp import FastMCP
 from .rss_parser import PodcastRSSParser
 
 
-# Jupiter Broadcasting podcast feeds
-JB_FEEDS = {
+# Example podcast feeds
+FEEDS = {
     "Linux Unplugged": "https://feeds.jupiterbroadcasting.com/lup",
     "This Week in Bitcoin": "https://serve.podhome.fm/rss/55b53584-4219-4fb0-b916-075ce23f714e",
     "The Launch": "https://serve.podhome.fm/rss/04b078f9-b3e8-4363-a576-98e668231306",
@@ -16,10 +16,10 @@ JB_FEEDS = {
 }
 
 # Initialize the RSS parser with example feeds
-rss_parser = PodcastRSSParser(JB_FEEDS)
+rss_parser = PodcastRSSParser(FEEDS)
 
 # Create FastMCP instance
-mcp = FastMCP("Jupiter Broadcasting Podcast Data MCP Server")
+mcp = FastMCP("Podcast Data MCP Server")
 
 
 @mcp.tool()

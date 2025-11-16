@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Test script for the RSS parser using the sample RSS file."""
 
-from jupiterbroadcasting_mcp.rss_parser import PodcastRSSParser
+from podcast_mcp.rss_parser import PodcastRSSParser
 def test_local_file():
     """Test parsing the local sample RSS file."""
     # Use file:// URL to read the local sample

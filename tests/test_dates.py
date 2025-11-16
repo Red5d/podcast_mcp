@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Test script for date parsing functionality."""
 
-from jupiterbroadcasting_mcp.rss_parser import PodcastRSSParser
+from podcast_mcp.rss_parser import PodcastRSSParser
 
 def test_date_parsing():
     """Test date parsing functionality."""

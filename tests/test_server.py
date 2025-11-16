@@ -1,6 +1,6 @@
-"""Tests for the Jupiter Broadcasting MCP server."""
+"""Tests for the Podcasting 2.0 RSS MCP server."""
 import pytest
-from jupiterbroadcasting_mcp.rss_parser import PodcastRSSParser
+from podcast_mcp.rss_parser import PodcastRSSParser
 
 
 def test_podcast_rss_parser_init():
