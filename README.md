@@ -145,7 +145,7 @@ Fetch the transcript content for an episode.
 To add or modify RSS feeds, edit the `FEEDS` dictionary in `podcast_mcp/server.py`:
 
 ```python
-JB_FEEDS = {
+FEEDS = {
     "Show Name": "https://example.com/feed.rss",
     "Another Show": "https://example.com/another-feed.rss",
 }
