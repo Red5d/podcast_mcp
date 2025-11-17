@@ -41,7 +41,7 @@ uv sync
 To start the MCP server:
 
 ```bash
-uv run podcast-mcp
+uv run podcast_mcp
 ```
 
 Or alternatively:
