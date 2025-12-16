@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "podcast_mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "A FastMCP server for parsing Podcasting 2.0 RSS feeds"
 readme = "README.md"
 license = {text = "MIT"}

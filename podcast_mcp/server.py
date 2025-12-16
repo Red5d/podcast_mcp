@@ -39,7 +39,9 @@ def search_episodes(
     before_date: Optional[str] = None,
     hosts: Optional[List[str]] = None,
     text_search: Optional[str] = None,
-) -> List[Dict[str, Any]]:
+    page: int = 1,
+    per_page: int = 5,
+) -> Dict[str, Any]:
     """Search for episodes based on various criteria. At least one search parameter must be provided.
     
     Args:
@@ -48,22 +50,39 @@ def search_episodes(
         before_date: Only return episodes published before this date (YYYY-MM-DD or ISO format)
         hosts: List of host names to filter by
         text_search: Search text to match against episode titles and descriptions
+        page: Page number (1-indexed, default: 1)
+        per_page: Number of results per page (default: 5)
     
     Returns:
-        List of episodes matching the search criteria.
+        Dictionary containing episodes, pagination info (total, page, per_page, total_pages).
     """
     try:
-        return rss_parser.search_episodes(
+        results = rss_parser.search_episodes(
             show_name=show_name,
             since_date=since_date,
             before_date=before_date,
             hosts=hosts,
             text_search=text_search,
         )
+        
+        total = len(results)
+        total_pages = (total + per_page - 1) // per_page if per_page > 0 else 0
+        start_idx = (page - 1) * per_page
+        end_idx = start_idx + per_page
+        
+        return {
+            "episodes": results[start_idx:end_idx],
+            "pagination": {
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+                "total_pages": total_pages,
+            }
+        }
     except ValueError as e:
-        return [{"error": str(e)}]
+        return {"error": str(e)}
     except Exception as e:
-        return [{"error": f"Search failed: {str(e)}"}]
+        return {"error": f"Search failed: {str(e)}"}
 
 
 @mcp.tool()
